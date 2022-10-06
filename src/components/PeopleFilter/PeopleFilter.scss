@@ -1,0 +1,91 @@
+@import '/src/components/scss/global';
+
+.header-filter {
+    @include d-flex;
+    // background-color: $background-gray-color;
+
+    padding        : 10px 0;
+    justify-content: space-around;
+
+    .filter-search {
+        @include d-flex;
+        justify-content : space-between;
+        border          : 1px solid gray;
+        height          : 32px;
+        width           : 30%;
+        background-color: $white-color;
+        border-radius   : 24px;
+        overflow        : hidden;
+
+        input {
+            @include input;
+            border-color              : transparent $background-gray-color transparent transparent;
+            border-top-right-radius   : 0;
+            border-bottom-right-radius: 0;
+
+            &:not(:placeholder-shown)~.filter-search-icon {
+                background-color: rgb(244, 244, 244);
+            }
+
+            // &:focus {
+            //     border: 1px solid rgb(94, 93, 93);
+            // }
+        }
+
+        .filter-search-icon {
+            font-size                 : 2.5rem;
+            color                     : $primary-color;
+            cursor                    : pointer;
+            padding                   : 5px 20px;
+            border-top-right-radius   : 24px;
+            border-bottom-right-radius: 24px;
+            transition                : all 0.2s ease;
+
+            &:hover {
+                background-color: $primary-color-fade !important;
+            }
+        }
+
+        &:focus-within {
+            border: 2px solid rgba($color: #000000, $alpha: 1);
+        }
+
+    }
+
+    .filter-limit {
+        @include d-flex;
+
+        label {
+            font-size   : 1.8rem;
+            margin-right: 8px;
+        }
+
+        input {
+            @include input;
+            width: 120px
+        }
+    }
+
+    .filter-sort,
+    .filter-room {
+
+
+        label {
+            font-size   : 1.8rem;
+            margin-right: 8px;
+        }
+
+        select {
+            border       : 1px solid gray;
+            height       : 32px;
+            font-size    : 1.6rem;
+            padding      : 0 16px 0 12px;
+            border       : none;
+            border-radius: 24px;
+            outline      : 1px solid gray;
+            cursor       : pointer;
+
+        }
+    }
+
+}

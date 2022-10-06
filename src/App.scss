@@ -1,0 +1,141 @@
+// :root {
+//     --primary-color: rgb(20, 180, 20);
+
+// }
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    padding: 0;
+    margin : 0;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-none {
+    display: none;
+}
+
+.center {
+    align-items: center;
+}
+
+.text {
+    text-decoration: none;
+}
+
+input[type=checkbox] {
+    width : 20px;
+    height: 20px;
+}
+
+.overlay {
+    position        : fixed;
+    top             : 0;
+    right           : 0;
+    bottom          : 0;
+    left            : 0;
+    background-color: rgba(10, 10, 10, 0.4)
+}
+
+.Toastify__toast {
+    font-size: 1.6rem;
+}
+
+.disabled {
+    background-color: gray !important;
+    cursor          : default !important;
+    opacity         : 1 !important;
+}
+
+.p10 {
+    width: 10%;
+}
+
+.p15 {
+    width: 15%;
+}
+
+.p20 {
+    width: 20%;
+}
+
+.p25 {
+    width: 25%;
+}
+
+.p30 {
+    width: 30%;
+}
+
+.p35 {
+    width: 35%;
+}
+
+.p40 {
+    width: 40%;
+}
+
+.p45 {
+    width: 45%;
+}
+
+.p50 {
+    width: 50%;
+}
+
+.p55 {
+    width: 55%;
+}
+
+.p60 {
+    width: 60%;
+}
+
+.p65 {
+    width: 65%;
+}
+
+.p70 {
+    width: 70%;
+}
+
+.p75 {
+    width: 75%;
+}
+
+.p80 {
+    width: 80%;
+}
+
+.p85 {
+    width: 85%;
+}
+
+.p90 {
+    width: 90%;
+}
+
+.p100 {
+    width: 100%;
+}

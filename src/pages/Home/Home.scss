@@ -1,0 +1,147 @@
+@import '/src/components/scss/global';
+
+.home-page {
+    .header {
+
+        .home-header {
+            @include d-flex;
+            padding         : 8px 0;
+            font-size       : 3rem;
+            color           : $primary-color;
+            text-transform  : uppercase;
+            background-color: rgb(222, 252, 231);
+        }
+
+        .home-options {
+            @include d-flex;
+            justify-content: space-between;
+            height         : 52px;
+            padding        : 10px 8px;
+            font-size      : 1.6rem;
+
+            .options-group {
+                @include d-flex;
+                justify-content: flex-end;
+                height         : 52px;
+                padding        : 10px 8px;
+                font-size      : 1.6rem;
+
+
+
+                .option-daycheck,
+                .option-add {
+                    @include d-flex;
+                    height          : 100%;
+                    border          : 1px solid $background-gray-color;
+                    border-radius   : 24px;
+                    padding         : 0 12px;
+                    background-color: $primary-color;
+                    cursor          : pointer;
+
+                    .icon {
+                        color    : $white-color;
+                        font-size: 1.8rem;
+                        margin   : 0 4px;
+
+                        &.calender-icon {}
+                    }
+
+                    p {
+                        color    : $white-color;
+                        font-size: 1.8rem;
+
+                    }
+
+
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                }
+
+                .option-daycheck {
+                    background-color: #d90f0f;
+                }
+            }
+
+
+
+            .option-help {
+                height       : 100%;
+                line-height  : 32px;
+                margin-left  : 12px;
+                border-radius: 24px;
+                padding      : 0 8px;
+                cursor       : pointer;
+
+                &:hover {
+                    background-color: $background-gray-color
+                }
+            }
+
+            .options-language {
+                display      : block;
+                height       : 100%;
+                line-height  : 32px;
+                margin       : 0 4px;
+                border-radius: 24px;
+
+                @include d-flex;
+                justify-content: space-between;
+
+                .vi {
+                    @include d-flex;
+                    border-radius: 50%;
+                    width        : 20px;
+                    height       : 20px;
+                    padding      : 12px
+                }
+
+                .en {
+                    @include d-flex;
+                    border-radius: 50%;
+                    width        : 20px;
+                    height       : 20px;
+                    padding      : 12px
+                }
+
+                .option-language {
+                    cursor: pointer;
+
+                    &.active {
+                        background-color: orange;
+                    }
+
+                }
+            }
+
+            .profile {
+                height       : 32px;
+                width        : 32px;
+                border-radius: 50%;
+            }
+
+            .log-out {
+                font-size: 2rem;
+                color    : red;
+                padding  : 4px;
+                cursor   : pointer;
+
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+
+
+        }
+
+        .header-table-wrap {
+            padding: 0 8px
+        }
+    }
+
+
+
+
+}

@@ -1,0 +1,11 @@
+@keyframes growth {
+    from {
+        transform: scaleY(40%);
+        opacity  : 0;
+    }
+
+    to {
+        transform: scaleY(100%);
+        opacity  : 1;
+    }
+}

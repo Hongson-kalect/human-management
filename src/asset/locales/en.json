@@ -1,0 +1,61 @@
+{
+  "code": "en",
+  "personnel_list": "Personnel list",
+  "timekeeping": "TimeKeeping",
+  "options": {
+    "timekeeping": "To Timekeeping",
+    "personnel": "To Personnel",
+    "checkmerit": "Check Merit List",
+    "addnew": "Add New",
+    "help": "Help"
+  },
+  "filter": {
+    "room": "Room",
+    "limit": "Limit",
+    "order_by": "Order By"
+  },
+  "table": {
+    "overtime": "Overtime",
+    "shift": "Shift",
+    "daytype": "Day Type",
+    "daycheck": "Day Check",
+    "email": "Email",
+    "name": "Name",
+    "age": "Age",
+    "gender": "Gender",
+    "address": "Address",
+    "mainrole": "Main Role",
+    "subrole": "Sub Role",
+    "room": "Room",
+    "options": "Options"
+  },
+  "peoplemodal": {
+    "password": "Password",
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "gender": "Gender",
+    "male": "Male",
+    "famale": "Female",
+    "other": "Other",
+    "age": "Age",
+    "address": "Address",
+    "phonenumber": "Phone Number",
+    "room": "Room",
+    "mainrole": "Main Role",
+    "subrole": "Sub Role",
+    "salarytype": "Salary Type",
+    "description": "Description",
+    "avatar": "Avatar",
+    "separatorbar": "Salary and Bonus detail",
+    "basicsalary": "Basic Salary",
+    "positionsalary": "Position Salary",
+    "laboriousbonus": "Laborious Bonus",
+    "languagebonus": "Language Bonus",
+    "vehicalbonus": "Vehical Bonus",
+    "innbonus": "Inn Bonus",
+    "insurance": "Insurance",
+    "editinfo": "Edit Information",
+    "addpeople": "Add People",
+    "cancel": "Cancel"
+  }
+}

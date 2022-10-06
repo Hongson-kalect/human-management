@@ -1,0 +1,51 @@
+@import '/src/components/scss/global';
+
+.pagination-containt {
+    margin: 20px auto;
+    @include d-flex;
+    justify-content: space-evenly;
+    width          : 40%;
+    font-size      : 2rem;
+
+    .pagination-number {
+
+        margin: 20px auto;
+        @include d-flex;
+        justify-content: center;
+        width          : 100%;
+        font-size      : 2rem;
+
+        .page-index {
+            @include d-flex;
+            width : 32px;
+            height: 32px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $primary-color-fade;
+            }
+
+            &.active {
+                background-color: $primary-color;
+                color           : $white-color
+            }
+
+
+        }
+
+        .page-index+.page-index {
+            margin-left: 30px;
+        }
+    }
+
+    .page-arrow {
+        width    : 32px;
+        height   : 32px;
+        font-size: 2.8rem;
+        cursor   : pointer;
+
+        &:hover {
+            background-color: $background-gray-color
+        }
+    }
+}

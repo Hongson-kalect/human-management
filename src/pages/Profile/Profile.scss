@@ -1,0 +1,57 @@
+@import '/src/components/scss/global';
+
+.profile-wrapper {
+    @include d-flex;
+    margin-bottom: 20px;
+
+    .profile-container {
+        @include d-flex;
+        flex-wrap       : wrap;
+        background-color: rgb(240, 240, 240);
+        border-radius   : 8px;
+        box-shadow      : rgba(0, 0, 0, 0.6) 0px 3px 8px;
+        width           : 80vw;
+        font-size       : 1.8rem;
+        padding-bottom  : 12px;
+
+        .profile-title {
+            color     : $primary-color;
+            font-size : 3.2rem;
+            text-align: center;
+            margin    : 5px 0 10px;
+        }
+
+        .profile-avatar {
+            height         : 300px;
+            width          : 400px;
+            background-size: contain !important
+        }
+
+        .input-group {
+            @include d-flex;
+            margin: 10px 0;
+
+            label {
+                margin-right: 20px;
+            }
+        }
+
+        .separator {
+            position    : relative;
+            font-size   : 1.2rem;
+            color       : rgb(131, 129, 129);
+            padding     : 20px 0;
+            border-right: 100% solid red;
+
+            &::after {
+                position        : absolute;
+                bottom          : 26px;
+                right           : 2px;
+                content         : '';
+                background-color: rgb(178, 176, 176);
+                height          : 1px;
+                width           : 85%;
+            }
+        }
+    }
+}

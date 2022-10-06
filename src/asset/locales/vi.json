@@ -1,0 +1,61 @@
+{
+  "code": "vi",
+  "personnel_list": "Danh sách nhân sự",
+  "timekeeping": "Chấm công",
+  "options": {
+    "timekeeping": "Đến chấm công",
+    "personnel": "Đến nhân sự",
+    "checkmerit": "Xem bảng công",
+    "addnew": "Thêm mới",
+    "help": "Hỗ trợ"
+  },
+  "filter": {
+    "room": "Phòng",
+    "limit": "Giới hạn",
+    "order_by": "Sắp xếp theo"
+  },
+  "table": {
+    "overtime": "Làm thêm",
+    "shift": "Ca",
+    "daytype": "Loại ngày",
+    "daycheck": "Chấm công",
+    "email": "Email",
+    "name": "Tên",
+    "age": "Tuổi",
+    "gender": "Giới tính",
+    "address": "Địa chỉ",
+    "mainrole": "Chức vụ chính",
+    "subrole": "Chức vụ phụ",
+    "room": "Phòng",
+    "options": "Lựa chọn"
+  },
+  "peoplemodal": {
+    "password": "Mật khẩu",
+    "firstname": "Họ",
+    "lastname": "Tên",
+    "gender": "Giới tính",
+    "male": "Nam",
+    "female": "Nữ",
+    "other": "Khác",
+    "age": "Tuổi",
+    "address": "Địa chỉ",
+    "phonenumber": "Số điện thoại",
+    "room": "Phòng",
+    "mainrole": "Chức vụ chính",
+    "subrole": "Chức vụ phụ",
+    "salarytype": "Kiểu lương",
+    "description": "Mô tả",
+    "avatar": "Ảnh",
+    "separatorbar": "Thông tin lương và thưởng",
+    "basicsalary": "Lương cơ bản",
+    "positionsalary": "Lương chức vụ",
+    "laboriousbonus": "Thưởng chuyên cần",
+    "languagebonus": "Thưởng ngoại ngữ",
+    "vehicalbonus": "Phụ cấp phương tiện",
+    "innbonus": "Phụ cấp nơi ở",
+    "insurance": "Mức bảo hiểm",
+    "editinfo": "Sửa thông tin",
+    "addpeople": "Thêm nhân sự",
+    "cancel": "Huỷ"
+  }
+}

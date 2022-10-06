@@ -1,0 +1,16 @@
+@mixin d-flex {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+}
+
+@mixin input {
+    font-size    : 1.8rem;
+    height       : 100%;
+    width        : 90%;
+    padding      : 4px 0 4px 16px;
+    border       : 1px solid gray;
+    border-radius: 24px;
+    outline      : none;
+    caret-color  : $primary-color;
+}
