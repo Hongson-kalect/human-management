@@ -61,174 +61,194 @@ function Pagination({
           loadPeopleList={loadPeopleList}
         />
       </div>
-      <div className="pagination-containt">
-        <FontAwesomeIcon
-          className="prev-page page page-arrow "
-          icon={faCaretLeft}
-          data-id={page > 1 ? Number(page) - 1 : page}
-          onClick={(e) => handlePageChange(e)}
-        />
-        <div className="pagination-number">
-          {maxPage < 11 ? (
-            <>
-              {maxPage > 1 && (
-                <>
-                  <div
-                    className="page page-index active"
-                    data-id={1}
-                    onClick={(e) => handlePageChange(e)}
-                  >
-                    1
-                  </div>
-                  <div
-                    className="page page-index"
-                    data-id={2}
-                    onClick={(e) => handlePageChange(e)}
-                  >
-                    2
-                  </div>
-                </>
-              )}
-              {maxPage > 2 && (
-                <>
-                  <div
-                    className="page page-index active"
-                    data-id={3}
-                    onClick={(e) => handlePageChange(e)}
-                  >
-                    {3}
-                  </div>
-                </>
-              )}
-              {maxPage > 3 && (
-                <>
-                  <div
-                    className="page page-index active"
-                    data-id={4}
-                    onClick={(e) => handlePageChange(e)}
-                  >
-                    {4}
-                  </div>
-                </>
-              )}
-              {maxPage > 4 && (
-                <>
-                  <div
-                    className="page page-index active"
-                    data-id={5}
-                    onClick={(e) => handlePageChange(e)}
-                  >
-                    {5}
-                  </div>
-                </>
-              )}
-              {maxPage > 5 && (
-                <>
-                  <div
-                    className="page page-index active"
-                    data-id={6}
-                    onClick={(e) => handlePageChange(e)}
-                  >
-                    {6}
-                  </div>
-                </>
-              )}
-              {maxPage > 6 && (
-                <>
-                  <div
-                    className="page page-index active"
-                    data-id={7}
-                    onClick={(e) => handlePageChange(e)}
-                  >
-                    {7}
-                  </div>
-                </>
-              )}
-              {maxPage > 7 && (
-                <>
-                  <div
-                    className="page page-index active"
-                    data-id={8}
-                    onClick={(e) => handlePageChange(e)}
-                  >
-                    {8}
-                  </div>
-                </>
-              )}
-              {maxPage > 8 && (
-                <>
-                  <div
-                    className="page page-index active"
-                    data-id={9}
-                    onClick={(e) => handlePageChange(e)}
-                  >
-                    {9}
-                  </div>
-                </>
-              )}
-              {maxPage > 9 && (
-                <>
-                  <div
-                    data-id={10}
-                    className="page page-index active"
-                    onClick={(e) => handlePageChange(e)}
-                  >
-                    {10}
-                  </div>
-                </>
-              )}
-            </>
-          ) : (
-            <>
-              <div
-                className="page page-index active"
-                data-id={1}
-                onClick={(e) => handlePageChange(e)}
-              >
-                1
-              </div>
-              <div
-                className="page page-index"
-                data-id={2}
-                onClick={(e) => handlePageChange(e)}
-              >
-                2
-              </div>
-              {page > 5 && <div className="page-space">...</div>}
-              {page >= 5 && page !== maxPage ? (
-                <>
-                  <div
-                    className="page page-index"
-                    data-id={page - 2}
-                    onClick={(e) => handlePageChange(e)}
-                  >
-                    {page - 2}
-                  </div>
-                  <div
-                    className="page page-index"
-                    data-id={page - 1}
-                    onClick={(e) => handlePageChange(e)}
-                  >
-                    {page - 1}
-                  </div>
-                </>
-              ) : (
-                page === 4 && (
-                  <div
-                    className="page page-index"
-                    data-id={page - 1}
-                    onClick={(e) => handlePageChange(e)}
-                  >
-                    {page - 1}
-                  </div>
-                )
-              )}
-              {page < maxPage - 1 && page > 2 && (
-                <div className="page page-index">{page}</div>
-              )}
+      {maxPage > 1 && (
+        <div className="pagination-containt">
+          <FontAwesomeIcon
+            className="prev-page page page-arrow "
+            icon={faCaretLeft}
+            data-id={page > 1 ? Number(page) - 1 : page}
+            onClick={(e) => handlePageChange(e)}
+          />
+          <div className="pagination-number">
+            {maxPage < 11 ? (
+              <>
+                {maxPage > 1 && (
+                  <>
+                    <div
+                      className="page page-index active"
+                      data-id={1}
+                      onClick={(e) => handlePageChange(e)}
+                    >
+                      1
+                    </div>
+                    <div
+                      className="page page-index"
+                      data-id={2}
+                      onClick={(e) => handlePageChange(e)}
+                    >
+                      2
+                    </div>
+                  </>
+                )}
+                {maxPage > 2 && (
+                  <>
+                    <div
+                      className="page page-index active"
+                      data-id={3}
+                      onClick={(e) => handlePageChange(e)}
+                    >
+                      {3}
+                    </div>
+                  </>
+                )}
+                {maxPage > 3 && (
+                  <>
+                    <div
+                      className="page page-index active"
+                      data-id={4}
+                      onClick={(e) => handlePageChange(e)}
+                    >
+                      {4}
+                    </div>
+                  </>
+                )}
+                {maxPage > 4 && (
+                  <>
+                    <div
+                      className="page page-index active"
+                      data-id={5}
+                      onClick={(e) => handlePageChange(e)}
+                    >
+                      {5}
+                    </div>
+                  </>
+                )}
+                {maxPage > 5 && (
+                  <>
+                    <div
+                      className="page page-index active"
+                      data-id={6}
+                      onClick={(e) => handlePageChange(e)}
+                    >
+                      {6}
+                    </div>
+                  </>
+                )}
+                {maxPage > 6 && (
+                  <>
+                    <div
+                      className="page page-index active"
+                      data-id={7}
+                      onClick={(e) => handlePageChange(e)}
+                    >
+                      {7}
+                    </div>
+                  </>
+                )}
+                {maxPage > 7 && (
+                  <>
+                    <div
+                      className="page page-index active"
+                      data-id={8}
+                      onClick={(e) => handlePageChange(e)}
+                    >
+                      {8}
+                    </div>
+                  </>
+                )}
+                {maxPage > 8 && (
+                  <>
+                    <div
+                      className="page page-index active"
+                      data-id={9}
+                      onClick={(e) => handlePageChange(e)}
+                    >
+                      {9}
+                    </div>
+                  </>
+                )}
+                {maxPage > 9 && (
+                  <>
+                    <div
+                      data-id={10}
+                      className="page page-index active"
+                      onClick={(e) => handlePageChange(e)}
+                    >
+                      {10}
+                    </div>
+                  </>
+                )}
+              </>
+            ) : (
+              <>
+                <div
+                  className="page page-index active"
+                  data-id={1}
+                  onClick={(e) => handlePageChange(e)}
+                >
+                  1
+                </div>
+                <div
+                  className="page page-index"
+                  data-id={2}
+                  onClick={(e) => handlePageChange(e)}
+                >
+                  2
+                </div>
+                {page > 5 && <div className="page-space">...</div>}
+                {page >= 5 && page !== maxPage ? (
+                  <>
+                    <div
+                      className="page page-index"
+                      data-id={page - 2}
+                      onClick={(e) => handlePageChange(e)}
+                    >
+                      {page - 2}
+                    </div>
+                    <div
+                      className="page page-index"
+                      data-id={page - 1}
+                      onClick={(e) => handlePageChange(e)}
+                    >
+                      {page - 1}
+                    </div>
+                  </>
+                ) : (
+                  page === 4 && (
+                    <div
+                      className="page page-index"
+                      data-id={page - 1}
+                      onClick={(e) => handlePageChange(e)}
+                    >
+                      {page - 1}
+                    </div>
+                  )
+                )}
+                {page < maxPage - 1 && page > 2 && (
+                  <div className="page page-index">{page}</div>
+                )}
 
-              {page <= maxPage - 4 && page >= 2 && (
-                <>
+                {page <= maxPage - 4 && page >= 2 && (
+                  <>
+                    <div
+                      className="page page-index"
+                      data-id={page + 1}
+                      onClick={(e) => handlePageChange(e)}
+                    >
+                      {page + 1}
+                    </div>
+                    <div
+                      className="page page-index"
+                      data-id={page + 2}
+                      onClick={(e) => handlePageChange(e)}
+                    >
+                      {page + 2}
+                    </div>
+                  </>
+                )}
+
+                {page < maxPage - 4 && <div className="page-space">...</div>}
+                {page === maxPage - 3 && (
                   <div
                     className="page page-index"
                     data-id={page + 1}
@@ -236,51 +256,33 @@ function Pagination({
                   >
                     {page + 1}
                   </div>
-                  <div
-                    className="page page-index"
-                    data-id={page + 2}
-                    onClick={(e) => handlePageChange(e)}
-                  >
-                    {page + 2}
-                  </div>
-                </>
-              )}
-
-              {page < maxPage - 4 && <div className="page-space">...</div>}
-              {page === maxPage - 3 && (
+                )}
                 <div
                   className="page page-index"
-                  data-id={page + 1}
+                  data-id={page - 1}
                   onClick={(e) => handlePageChange(e)}
                 >
-                  {page + 1}
+                  {maxPage - 1}
                 </div>
-              )}
-              <div
-                className="page page-index"
-                data-id={page - 1}
-                onClick={(e) => handlePageChange(e)}
-              >
-                {maxPage - 1}
-              </div>
-              <div
-                className="page page-index"
-                data-id={maxPage}
-                onClick={(e) => handlePageChange(e)}
-              >
-                {maxPage}
-              </div>
-            </>
-          )}
-        </div>
+                <div
+                  className="page page-index"
+                  data-id={maxPage}
+                  onClick={(e) => handlePageChange(e)}
+                >
+                  {maxPage}
+                </div>
+              </>
+            )}
+          </div>
 
-        <FontAwesomeIcon
-          className="next-page page page-arrow"
-          icon={faCaretRight}
-          data-id={page < maxPage ? Number(page) + 1 : page}
-          onClick={(e) => handlePageChange(e)}
-        />
-      </div>
+          <FontAwesomeIcon
+            className="next-page page page-arrow"
+            icon={faCaretRight}
+            data-id={page < maxPage ? Number(page) + 1 : page}
+            onClick={(e) => handlePageChange(e)}
+          />
+        </div>
+      )}
     </>
   );
 }

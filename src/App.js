@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "./App.scss";
+import ChangePassword from "./pages/ChangePassword/ChangePassword";
 import Checkuser from "./pages/CheckUser/CheckUser";
 import { Daycheck } from "./pages/Daycheck";
 import { Home } from "./pages/Home";
@@ -15,6 +16,7 @@ function App() {
           <Route path="daycheck" element={<Daycheck />}></Route>
           <Route path="home" element={<Home />}></Route>
           <Route path="profile" element={<Profile />}></Route>
+          <Route path="/changepass" element={<ChangePassword />} />
           <Route path="*" element={<Home />}></Route>
           {/* <Route path="daycheck" element={<Daycheck />}></Route>
           <Route path="home" element={<Home />}></Route> */}

@@ -1,0 +1,53 @@
+@import '/src/components/scss/global';
+
+.extend-modal-container {
+    position        : fixed;
+    top             : 30%;
+    right           : 30%;
+    bottom          : 50%;
+    left            : 30%;
+    padding         : 1px 2px;
+    box-shadow      : rgba(0, 0, 0, 0.6) 0px 3px 8px;
+    border-radius   : 4px;
+    background-color: $white-color;
+    z-index         : 3;
+    text-align      : center;
+    overflow        : auto;
+
+    .title {
+        font-size     : 2rem;
+        font-weight   : 600;
+        color         : red;
+        text-align    : center;
+        text-transform: uppercase;
+    }
+
+    input {
+        @include input;
+        height       : 40px;
+        width        : 50%;
+        display      : block;
+        margin       : 0 auto;
+        border-radius: 4px;
+        margin-top   : 10px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        font-size       : 2rem;
+        background-color: rgb(54, 8, 238);
+        color           : white;
+        padding         : 4px 8px;
+        min-width       : 200px;
+        border          : 1px solid gray;
+        outline         : none;
+        border-radius   : 12px;
+        cursor          : pointer;
+
+        &:hover {
+            background-color: rgb(34, 12, 119);
+            ;
+        }
+
+    }
+}

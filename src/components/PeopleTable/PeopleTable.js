@@ -198,7 +198,7 @@ function HomeTable({
           <div className="select-group p20">
             <label htmlFor="work-type">{t("table.overtime")}:</label>
             <select
-              value={workType}
+              value={workType || ""}
               name="workType"
               id="work-type"
               onChange={(e) => {
@@ -222,7 +222,7 @@ function HomeTable({
           <div className="select-group p20">
             <label htmlFor="work-type">{t("table.shift")}:</label>
             <select
-              value={workShift}
+              value={workShift || ""}
               name="workShift"
               onChange={(e) => {
                 setWorkShift(e.target.value);

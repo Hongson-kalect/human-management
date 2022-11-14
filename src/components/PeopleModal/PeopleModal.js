@@ -44,7 +44,8 @@ function HomeModal({
   const [preAvatar, setPreAvatar] = useState("");
   const [isImageChange, setIsImageChange] = useState(false);
   const [peopleDescription, setPeopleDescription] = useState("");
-
+  const [dayIn, setDayIn] = useState(new Date().toISOString().slice(0, 10));
+  const [dayOut, setDayOut] = useState("");
   const [basicSalary, setBasicSalary] = useState("5200000");
   const [positionSalary, setPositionSalary] = useState("500000");
   const [laboriousBonus, setLaboriousBonus] = useState("500000");
@@ -84,6 +85,8 @@ function HomeModal({
         mainRole: mainRole,
         subRole: subRole,
         salaryType: salaryType,
+        dayIn: dayIn || new Date(),
+        dayOut: dayOut || 0,
         avatar: isImageChange ? imgRes.data.data.url : "",
         peopleDescription: peopleDescription,
         basicSalary: basicSalary,
@@ -142,6 +145,8 @@ function HomeModal({
         subRole: subRole,
         workRoom: workRoom,
         salaryType: salaryType,
+        dayIn: dayIn,
+        dayOut: dayOut,
         avatar: imgRes ? imgRes.data.data.url : preAvatar,
         peopleDescription: peopleDescription,
         basicSalary: basicSalary,
@@ -194,6 +199,8 @@ function HomeModal({
     setMainRole("MROLE0");
     setSubRole("SROLE0");
     setSalaryType("count");
+    setDayIn(new Date());
+    setDayOut("");
     setAvatar("");
     setPreAvatar("");
     setPeopleDescription("");
@@ -234,6 +241,8 @@ function HomeModal({
               setPhoneNumber(data?.phoneNumber || "undefined");
               setMainRole(data?.mainRole || "undefined");
               setSubRole(data?.subRole || "undefined");
+              setDayIn(data?.dayIn?.slice(0, 10) || "undefined");
+              setDayOut(data?.dayOut?.slice(0, 10) || "undefined");
               setSalaryType(data?.salaryType || "undefined");
               setPreAvatar(data?.avatar || "undefined");
               setPeopleDescription(data?.description || "");
@@ -430,30 +439,71 @@ function HomeModal({
             </select>
           </div>
         </div>
-        <div className="input-group has-image">
-          <div className="form-input-wrap">
-            <label htmlFor="description">{t("peoplemodal.description")}</label>
-            <input
-              value={peopleDescription}
-              onChange={(e) => setPeopleDescription(e.target.value)}
-              className="description"
-              type="text"
-            />
+        <div className="input-group">
+          <div className="input-group has-image p75">
+            <div className="form-input-wrap p50">
+              <label htmlFor="description">
+                {t("peoplemodal.description")}
+              </label>
+              <input
+                value={peopleDescription}
+                onChange={(e) => setPeopleDescription(e.target.value)}
+                className="description"
+                type="text"
+              />
+            </div>
+            <div className="form-input-wrap p50">
+              <label htmlFor="avatar">{t("peoplemodal.avatar")}</label>
+              <input
+                ref={imgField}
+                value={avatar}
+                onChange={(e) => handleAvatarChange(e)}
+                className="avatar"
+                type="file"
+              />
+            </div>
+            <div className="form-input-wrap p50">
+              <label htmlFor="description">Ngày vào</label>
+              <input
+                value={dayIn}
+                onChange={(e) => setDayIn(e.target.value)}
+                className="description"
+                type="date"
+              />
+            </div>
+            <div className="form-input-wrap p50">
+              <label htmlFor="avatar">
+                {isEditMode ? "Hạn hợp đồng" : "Thời gian hợp đồng (tháng)"}{" "}
+              </label>
+              <input
+                value={dayOut}
+                placeholder="Unlimited"
+                onChange={(e) => {
+                  const val = e.target.value;
+                  if (!isEditMode) {
+                    if (Number.isInteger(Number(val))) {
+                      if (val < 0 || val > 240)
+                        toast.error(
+                          "Thời gian trong khoảng từ 1 đến 240 tháng"
+                        );
+                      else if (val !== "0") setDayOut(val.trim());
+                    } else toast.error("Vui lòng nhập số");
+                  } else {
+                    setDayOut(val);
+                  }
+                }}
+                className="avatar"
+                type={isEditMode ? "date" : "text"}
+                min="0"
+                max=""
+              />
+            </div>
           </div>
-          <div className="form-input-wrap">
-            <label htmlFor="avatar">{t("peoplemodal.avatar")}</label>
-            <input
-              ref={imgField}
-              value={avatar}
-              onChange={(e) => handleAvatarChange(e)}
-              className="avatar"
-              type="file"
-            />
-          </div>
+
           <div
             className="pre-avatar"
             style={{
-              backgroundImage: `url(${preAvatar})`,
+              backgroundImage: `url(${preAvatar}),url('/200100ImageNotFound.png')`,
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",

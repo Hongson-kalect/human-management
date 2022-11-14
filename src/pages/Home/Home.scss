@@ -19,6 +19,18 @@
             padding        : 10px 8px;
             font-size      : 1.6rem;
 
+            .expired-staff {
+                margin-left: 8%;
+                cursor     : pointer;
+                font-size  : 2rem;
+                color      : red;
+
+                &:hover {
+                    text-decoration: underline;
+                    color          : rgb(211, 13, 13)
+                }
+            }
+
             .options-group {
                 @include d-flex;
                 justify-content: flex-end;

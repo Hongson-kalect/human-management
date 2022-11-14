@@ -12,6 +12,7 @@ import axios from "axios";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import "react-toastify/dist/ReactToastify.css";
 import PeopleModal from "../../components/PeopleModal/PeopleModal";
+import ConstrastModal from "../../components/ConstrastModal/ConstrastModal";
 import { faCalendarCheck } from "@fortawesome/free-regular-svg-icons";
 import { useNavigate } from "react-router-dom";
 import Tippy from "@tippyjs/react";
@@ -21,12 +22,14 @@ import Pagination from "../../components/Pagination/Pagination";
 
 function Home() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [role, setRole] = useState("");
   const [userInfo, setUserInfo] = useLocalStorage("user", {});
-  const navigate = useNavigate();
   const [isModalShow, setIsModalShow] = useState(false);
+  const [isConstrastModelShow, setIsConstrastModelShow] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
   const [editTarget, setEditTarget] = useState(false);
+  const [expiredList, setExpiredList] = useState([]);
 
   const [peopleList, setPeopleList] = useState([]);
 
@@ -38,6 +41,9 @@ function Home() {
 
   useEffect(() => {
     loadPeopleList();
+    axios
+      .get("http://localhost:8080/api/v1/p/expired")
+      .then((respon) => setExpiredList(respon.data.data));
   }, []);
 
   useLayoutEffect(() => {
@@ -74,7 +80,16 @@ function Home() {
               <p className="daycheck-text">{t("options.timekeeping")}</p>
             </button>
           </div>
-
+          <div className="expired-staff">
+            <p
+              className="daycheck-text"
+              onClick={(e) => setIsConstrastModelShow(true)}
+            >
+              {expiredList.length > 0
+                ? `Nhân sự sắp hết hợp đồng (${expiredList.length})`
+                : "Xem hợp đồng"}
+            </p>
+          </div>
           <div className="options-group options-group2">
             <button className="option-add" onClick={() => setIsModalShow(true)}>
               <FontAwesomeIcon className="icon plus-icon" icon={faPlus} />
@@ -148,6 +163,21 @@ function Home() {
       </div>
       <div className="container"></div>
       <div className="footer"></div>
+      {isConstrastModelShow && (
+        <div className="constart-modal-wrapper">
+          <div
+            className="overlay"
+            onClick={() => setIsConstrastModelShow(false)}
+          ></div>
+          <ConstrastModal
+            peopleList={peopleList}
+            setPeopleList={setPeopleList}
+            emergencyList={expiredList}
+            setEmergencyList={setExpiredList}
+            count={expiredList.length}
+          />
+        </div>
+      )}
 
       {isModalShow && (
         <PeopleModal

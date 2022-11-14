@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import "./PeopleFilter.scss";
 import { useTranslation } from "react-i18next";
+import { toast } from "react-toastify";
 
 const workRoomList = [
   { value: "IT-01", viLabel: "Phòng IT số 1", enLabel: "IT no 1 office" },
@@ -33,8 +34,9 @@ function HeaderFilter({ setPeopleList = () => {}, room = "", role = "admin" }) {
     const timeOut = setTimeout(() => {
       setSearchDebounce(searchVal);
     }, 1000);
+
     return () => clearTimeout(timeOut);
-  }, [searchVal]);
+  }, [searchDebounce, searchVal]);
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
@@ -65,8 +67,16 @@ function HeaderFilter({ setPeopleList = () => {}, room = "", role = "admin" }) {
           className="filter-search-input"
           type="text"
           value={searchVal}
+          name="search-val"
           onChange={(e) => {
-            setSearchVal(e.target.value);
+            const check = new RegExp("[$&+,:;=?@#|'<>.^*()%!-]");
+            if (check.exec(e.target.value)) {
+              toast.warning(
+                t("code") === "vi"
+                  ? "Vui lòng không nhập ký tự đặc biệt"
+                  : "Please do not enter special characters"
+              );
+            } else setSearchVal(e.target.value);
           }}
           placeholder="Search..."
         />
@@ -77,7 +87,7 @@ function HeaderFilter({ setPeopleList = () => {}, room = "", role = "admin" }) {
         <div className="input-group filter-room">
           <label className="">{t("filter.room")}</label>
           <select
-            value={workRoom}
+            value={workRoom || ""}
             onChange={(e) => {
               setWorkRoom(e.target.value);
             }}
@@ -101,7 +111,7 @@ function HeaderFilter({ setPeopleList = () => {}, room = "", role = "admin" }) {
           type="number"
           value={limit}
           onChange={(e) => {
-            setLimit(e.target.value);
+            if (!(Number(e.target.value) < 0)) setLimit(e.target.value);
           }}
           placeholder="Unlimited"
         />
